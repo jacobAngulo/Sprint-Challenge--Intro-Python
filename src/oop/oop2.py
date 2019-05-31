@@ -20,11 +20,11 @@ class GroundVehicle():
 # TODO
 
 vehicles = [
-    GroundVehicle(),
-    GroundVehicle(),
-    Motorcycle(),
-    GroundVehicle(),
-    Motorcycle(),
+    GroundVehicle(4),
+    GroundVehicle(3),
+    Motorcycle(2),
+    GroundVehicle(4),
+    Motorcycle(2),
 ]
 
 # Go through the vehicles list and print the result of calling drive() on each.
