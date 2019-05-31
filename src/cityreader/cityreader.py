@@ -14,6 +14,7 @@
 #
 # Note that the first line of the CSV is header that describes the fields--this
 # should not be loaded into a City object.
+import csv
 cities = []
 
 
@@ -22,10 +23,13 @@ def cityreader(cities=[]):
   # For each city record, create a new City instance and add it to the
   # `cities` list
 
-    with open('src/cityreader/cities.csv') as f:
-        entries = f.read().split(',')
+    with open('src/cityreader/cities.csv', newline='') as f:
+        entries = csv.reader(f, delimiter=',')
         for x in entries:
-            cities.append(x)
+            if x[0] == 'city':
+                pass
+            else:
+                cities.append({(x[0], x[3], x[4])})
         f.close()
     return cities
 
